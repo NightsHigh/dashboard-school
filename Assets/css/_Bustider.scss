@@ -22,8 +22,8 @@
   }
   
   &-icon-right {
-    width: 50px;
-    height: 50px;
+    width: 100px;
+    height: 100px;
     background: url("../images/Passagerer__Ikon1.png") center/contain no-repeat;
     filter: brightness(0) invert(1);
     flex-shrink: 0;
@@ -39,10 +39,10 @@
   &-title {
     display: flex;
     font-weight: 900;
-    font-size: 2.25rem;
+    font-size: 4.25rem;
     letter-spacing: 0.04em;
     text-transform: uppercase;
-    margin-bottom: -1.5rem;
+    margin-bottom: -3.50rem;
   }
 
   &-list {
@@ -50,7 +50,8 @@
     padding: 0;
     display: flex;
     flex-direction: column;
-    gap: 6px;
+    gap: 75px;
+    font-size: 2rem;
     text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);
   }
 }

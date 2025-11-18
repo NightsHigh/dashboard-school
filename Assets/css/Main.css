@@ -15,7 +15,7 @@ body {
 
 .dashboard {
   display: grid;
-  grid-template-columns: 460px 1fr;
+  grid-template-columns: 700px 1fr;
   min-height: 100vh;
 }
 
@@ -44,7 +44,7 @@ body {
 }
 
 #date {
-  font-size: 1.5rem;
+  font-size: 3.5rem;
   text-transform: uppercase;
   letter-spacing: 0.05em;
   color: #fff;
@@ -55,7 +55,7 @@ body {
 }
 
 #clock {
-  font-size: 3.35rem;
+  font-size: 5.35rem;
   font-weight: 800;
   line-height: 1;
   letter-spacing: 0.01em;
@@ -83,7 +83,7 @@ body {
   line-height: 1;
 }
 .weather-temp .value {
-  font-size: 3.6rem;
+  font-size: 5.6rem;
 }
 .weather-temp .deg {
   display: inline-block;
@@ -96,7 +96,7 @@ body {
 }
 
 .weather-description {
-  font-size: 1rem;
+  font-size: 2rem;
   opacity: 0.98;
 }
 
@@ -114,8 +114,8 @@ body {
   border-bottom: 2px solid #fff;
 }
 .canteen-icon {
-  width: 50px;
-  height: 50px;
+  width: 100px;
+  height: 100px;
   background: url("../images/Icon-map-food.png") center/contain no-repeat;
   filter: brightness(0) invert(1);
   margin-bottom: -0.5rem;
@@ -126,11 +126,11 @@ body {
 }
 .canteen-title {
   font-weight: 900;
-  font-size: 2.25rem;
+  font-size: 4.25rem;
   letter-spacing: 0.04em;
   text-transform: uppercase;
   line-height: 1;
-  margin-bottom: -2rem;
+  margin-bottom: -3.5rem;
 }
 .canteen-list {
   margin: 10px 0 0;
@@ -145,7 +145,8 @@ body {
 .canteen-item {
   display: grid;
   grid-template-columns: 80px 1fr;
-  gap: 10px;
+  gap: 75px;
+  font-size: 2rem;
 }
 .canteen-day {
   opacity: 0.95;
@@ -162,7 +163,7 @@ body {
 }
 .schedule-table thead th {
   text-align: left;
-  font-size: 1.5rem;
+  font-size: 3.5rem;
   font-weight: 800;
   text-transform: uppercase;
   letter-spacing: 0.04em;
@@ -170,7 +171,7 @@ body {
 }
 .schedule-table tbody td {
   padding: 0.75rem 1.25rem;
-  font-size: 1.5rem;
+  font-size: 2.5rem;
   border-bottom: 1px solid #e8ebef;
   vertical-align: middle;
 }
@@ -237,8 +238,8 @@ body {
   flex-shrink: 0;
 }
 .bus-icon-right {
-  width: 50px;
-  height: 50px;
+  width: 100px;
+  height: 100px;
   background: url("../images/Passagerer__Ikon1.png") center/contain no-repeat;
   filter: brightness(0) invert(1);
   flex-shrink: 0;
@@ -252,17 +253,18 @@ body {
 .bus-title {
   display: flex;
   font-weight: 900;
-  font-size: 2.25rem;
+  font-size: 4.25rem;
   letter-spacing: 0.04em;
   text-transform: uppercase;
-  margin-bottom: -1.5rem;
+  margin-bottom: -3.5rem;
 }
 .bus-list {
   margin: 10px 0 0;
   padding: 0;
   display: flex;
   flex-direction: column;
-  gap: 6px;
+  gap: 75px;
+  font-size: 2rem;
   text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);
 }
 
@@ -291,7 +293,7 @@ body {
 
 .dashboard {
   display: grid;
-  grid-template-columns: 460px 1fr;
+  grid-template-columns: 700px 1fr;
   min-height: 100vh;
 }
 
@@ -303,7 +305,7 @@ body {
   display: flex;
   flex-direction: column;
   gap: 20px;
-  width: 460px;
+  width: 700px;
 }
 .aside::after {
   content: "";
