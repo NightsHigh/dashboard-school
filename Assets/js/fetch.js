@@ -1,7 +1,7 @@
 async function fetchNearbyDepartures() {
-  const response = await fetch("https://techcollegedashboard.netlify.app/.netlify/functions/bus");
   const url = "./.netlify/functions/bus";
   console.log("Fetching from:", url);
+  const response = await fetch(url);
   if (!response.ok) {
     throw new Error(`API error: ${response.status} ${response.statusText}`);
   }

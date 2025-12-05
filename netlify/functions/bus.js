@@ -1,6 +1,18 @@
 const API_URL = "https://www.rejseplanen.dk/api/nearbyDepartureBoard";
 
 async function handler(event, context) {
+  // Handle CORS preflight requests
+  if (event.httpMethod === "OPTIONS") {
+    return {
+      statusCode: 200,
+      headers: {
+        "Access-Control-Allow-Origin": "*",
+        "Access-Control-Allow-Headers": "Content-Type",
+        "Access-Control-Allow-Methods": "GET, OPTIONS",
+      },
+    };
+  }
+
   const ACCESS_ID = process.env.REJSEPLANEN_API_KEY;
 
   if (!ACCESS_ID) {
@@ -8,6 +20,12 @@ async function handler(event, context) {
     return {
       statusCode: 500,
       body: JSON.stringify({ error: "Server misconfigured" }),
+      headers: {
+        "Content-Type": "application/json",
+        "Access-Control-Allow-Origin": "*",
+        "Access-Control-Allow-Headers": "Content-Type",
+        "Access-Control-Allow-Methods": "GET, OPTIONS",
+      },
     };
   }
 
@@ -29,13 +47,24 @@ async function handler(event, context) {
     return {
       statusCode: 200,
       body: JSON.stringify(data),
-      headers: { "Content-Type": "application/json" },
+      headers: {
+        "Content-Type": "application/json",
+        "Access-Control-Allow-Origin": "*",
+        "Access-Control-Allow-Headers": "Content-Type",
+        "Access-Control-Allow-Methods": "GET, OPTIONS",
+      },
     };
   } catch (err) {
     console.error("Rejseplanen fetch error:", err);
     return {
       statusCode: 500,
       body: JSON.stringify({ error: "Failed to fetch bus data" }),
+      headers: {
+        "Content-Type": "application/json",
+        "Access-Control-Allow-Origin": "*",
+        "Access-Control-Allow-Headers": "Content-Type",
+        "Access-Control-Allow-Methods": "GET, OPTIONS",
+      },
     };
   }
 }
