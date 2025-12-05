@@ -1,21 +1,16 @@
 async function fetchNearbyDepartures() {
   const url = "./.netlify/functions/bus";
-  console.log("Fetching from:", url);
   const response = await fetch(url);
   if (!response.ok) {
     throw new Error(`API error: ${response.status} ${response.statusText}`);
   }
-
-  console.log("LIVE API LOADED");
   return response.json();
 }
 
 function parseDepartures(data) {
-  console.log("Parsing departures...");
 
 
   if (!data || !Array.isArray(data.Departure)) {
-    console.log("No departures found in JSON");
     return [];
   }
 
@@ -43,11 +38,8 @@ function getMinutesUntil(departureDate) {
 }
 
 function renderDepartures(departures) {
-  console.log("Rendering...");
-
   const bustider = document.getElementById("bustider");
   if (!bustider) {
-    console.log("ERROR: #bustider not found in DOM");
     return;
   }
 
@@ -115,8 +107,21 @@ function renderDepartures(departures) {
 
 
 
+function isWithinOperatingHours() {
+  // Get current time in Copenhagen timezone
+  const now = new Date();
+  const copenhagenTime = new Date(now.toLocaleString("en-US", { timeZone: "Europe/Copenhagen" }));
+  const hour = copenhagenTime.getHours();
+  
+  // Check if time is between 6:00 and 23:00 (6am to 11pm)
+  return hour >= 6 && hour < 23;
+}
+
 async function updateBusTimes() {
-  console.log("updateBusTimes() CALLED");
+  // Check if we're within operating hours (6am - 11pm Copenhagen time)
+  if (!isWithinOperatingHours()) {
+    return;
+  }
 
   try {
     const data = await fetchNearbyDepartures();
@@ -130,11 +135,5 @@ async function updateBusTimes() {
 
 
 updateBusTimes();  
-//!!!!!
-//DONT FUCKING CHANGE THE TIME OR WE MIGHT LOSE THE KEY AND THE BOARD WILL CRASHH
-//!!!!!
-setInterval(updateBusTimes, 55000);   // update every 55 sec (safe for API limit) max 50.000 calls and we do 47.000 a month
-//!!!!!
-//DONT FUCKING CHANGE THE TIME OR WE MIGHT LOSE THE KEY AND THE BOARD WILL CRASHH
-//!!!!!
-const BUS_URL = "./DataFromAPIs/Bus.json";
+
+setInterval(updateBusTimes, 55000);   // update every 55 sec
