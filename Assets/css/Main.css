@@ -15,7 +15,7 @@ body {
 
 .dashboard {
   display: grid;
-  grid-template-columns: 550px 1fr;
+  grid-template-columns: 500px 1fr;
   min-height: 100vh;
 }
 
@@ -293,7 +293,7 @@ body {
 
 .dashboard {
   display: grid;
-  grid-template-columns: 550px 1fr;
+  grid-template-columns: 500px 1fr;
   height: 100vh;
   overflow: hidden;
 }
@@ -306,7 +306,7 @@ body {
   display: flex;
   flex-direction: column;
   gap: 20px;
-  width: 550px;
+  width: 500px;
   overflow: hidden;
 }
 .aside::after {
