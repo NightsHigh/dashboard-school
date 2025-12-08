@@ -6,13 +6,17 @@
 @use '_Schedule';
 @use '_Bustider';
 * { box-sizing: border-box; }
-html, body { height: 100%; }
+html, body { 
+  height: 100vh; 
+  overflow: hidden;
+}
 body { margin: 0; font-family: $font; color: $ink; background: $white; }
 
 .dashboard {
   display: grid;
   grid-template-columns: $aside-width 1fr;
-  min-height: 100vh;
+  height: 100vh;
+  overflow: hidden;
 }
 
 .aside {
@@ -24,6 +28,7 @@ body { margin: 0; font-family: $font; color: $ink; background: $white; }
   flex-direction: column;
   gap: 20px;
   width: $aside-width;
+  overflow: hidden;
   &::after {
     content: '';
     position: absolute;
@@ -36,4 +41,5 @@ body { margin: 0; font-family: $font; color: $ink; background: $white; }
 .main {
   background: $white;
   padding: 18px 22px 26px;
+  overflow: hidden;
 }
